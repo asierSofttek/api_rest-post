@@ -1,0 +1,12 @@
+
+#result{
+    width: 400px;
+    border: solid 1px #ccc;
+    border-radius: 5px;;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+#result:empty{
+    border: none;
+}

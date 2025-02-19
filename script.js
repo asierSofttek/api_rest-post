@@ -1,4 +1,8 @@
-fetch('https://jsonplaceholder.typicode.com/posts', {
+const button = document.querySelector('#sendPost')
+button.addEventListener('click', post)
+
+function post() {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
       title: 'Título',
@@ -11,17 +15,13 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   })
     .then((response) => response.json())
     .then((json) => {
- 
       let resul = json;
-  
       let title = resul.title;
       let body = resul.body;
-  
       let content = `
           <h3> ${title}</h3>
           <p>${body}</p>
       `;
-  
-      document.getElementById('result').innerHTML = content;
+      document.querySelector('#result').innerHTML = content;
   });
-  
+}
